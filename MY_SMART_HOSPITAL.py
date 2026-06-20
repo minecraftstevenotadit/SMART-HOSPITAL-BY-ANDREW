@@ -4,7 +4,7 @@ import pickle
 import os
 import numpy as np
 
-st.set_page_config(page_title = "Smart Hospital Patient Navigator", page_icon = "🏥" layout="wide")
+st.set_page_config(page_title = "Smart Hospital Patient Navigator", page_icon = "🏥" ,layout="wide")
 
 st.markdown(""" 
 <style>
@@ -70,7 +70,7 @@ st.markdown("""
 
 @st.cache_resource
 def load_model():
-  with open('hospital_model/pkl', 'rb') as f:
+  with open('hospital_model.pkl', 'rb') as f:
     return pickle.load(f)
 
 bundle = load_model()
@@ -172,6 +172,5 @@ with st.form("triage_form"):
 
 
   st.markdown("<br>", unsafe_allow_html=True)
-
 
 
